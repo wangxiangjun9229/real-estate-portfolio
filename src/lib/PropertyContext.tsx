@@ -43,16 +43,16 @@ export function PropertyProvider({ children }: { children: ReactNode }) {
     return propertyList.find((p) => p.id === id);
   };
 
+  const contextValue = {
+    properties: propertyList,
+    addProperty,
+    updateProperty,
+    deleteProperty,
+    getPropertyById,
+  };
+
   return (
-    <PropertyContext.Provider 
-      value={{
-        properties: propertyList,
-        addProperty,
-        updateProperty,
-        deleteProperty,
-        getPropertyById,
-      }}
-    >
+    <PropertyContext.Provider value={contextValue}>
       {children}
     </PropertyContext.Provider>
   );
