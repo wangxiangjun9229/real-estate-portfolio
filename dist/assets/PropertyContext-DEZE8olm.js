@@ -1,1 +1,0 @@
-import{r as t}from"./react-vendor-BK-5Om1u.js";import"./motion-vendor-C2ZBcSxo.js";const e=t.createContext({properties:[],addProperty:()=>{},updateProperty:()=>{},deleteProperty:()=>{},getPropertyById:()=>{}});function p(){return t.useContext(e)}export{p as u};
