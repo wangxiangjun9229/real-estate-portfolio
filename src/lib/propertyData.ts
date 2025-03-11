@@ -30,7 +30,7 @@ const properties: Property[] = [
       }
     ],
     pdfUrl: '/property-reports/luxury-downtown.pdf',
-    description: 'A stunning luxury apartment in the heart of downtown. Features high-end finishes, floor-to-ceiling windows, and panoramic city views. Recently renovated with modern appliances and smart home technology.'
+    description: 'A stunning luxury apartment in the heart of downtown. Features high-end finishes, floor-to-ceiling windows, and panoramic city views.'
   },
   {
     id: '2',
@@ -52,15 +52,10 @@ const properties: Property[] = [
         id: '2',
         url: 'https://images.unsplash.com/photo-1564013799922-7f06c8f3a1f0?auto=format&fit=crop&w=1200&q=60',
         alt: 'Backyard'
-      },
-      {
-        id: '3',
-        url: 'https://images.unsplash.com/photo-1564013799924-7f06c8f3a1f1?auto=format&fit=crop&w=1200&q=60',
-        alt: 'Family Room'
       }
     ],
     pdfUrl: '/property-reports/suburban-home.pdf',
-    description: 'Spacious family home in a quiet suburban neighborhood. Features 4 bedrooms, 3.5 bathrooms, a finished basement, and a large backyard. Close to excellent schools and parks.'
+    description: 'Spacious family home in a quiet suburban neighborhood. Features 4 bedrooms, 3.5 bathrooms, and a large backyard.'
   },
   {
     id: '3',

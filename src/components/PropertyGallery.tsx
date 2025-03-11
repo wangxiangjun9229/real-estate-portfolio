@@ -73,4 +73,4 @@ export default function PropertyGallery({ photos }: PropertyGalleryProps) {
       </Dialog>
     </div>
   )
-} 
+}
