@@ -1,16 +1,9 @@
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
-import Layout from './components/Layout'
 import { PropertyProvider } from './lib/PropertyContext'
 import Portfolio from './pages/Portfolio'
 import PropertyDetail from './pages/PropertyDetail'
 import NotFound from './pages/NotFound'
 import Contact from './pages/Contact'
-
-const LoadingSpinner = () => (
-  <div className="flex items-center justify-center min-h-screen">
-    <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
-  </div>
-)
 
 const App = () => {
   return (
