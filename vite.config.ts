@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   base: '/real-estate-portfolio/',
   server: {
-    port: 3000,
+    port: 3002,
     open: true
   },
   build: {
