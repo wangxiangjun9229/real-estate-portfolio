@@ -37,6 +37,17 @@ const StatCard = memo(function StatCard({ title, value, icon: Icon }: {
 const PropertyCard = memo(function PropertyCard({ property }: { property: Property }) {
   console.log(`Rendering PropertyCard: ${property.name}`);
   const isOpportunity = property.type === 'opportunity';
+  let investorSecuredPercent = 0;
+  if (isOpportunity && property.opportunityDetails?.investorSecured) {
+    const match = property.opportunityDetails.investorSecured.match(/(\d+) out of (\d+)/);
+    if (match) {
+      const secured = parseInt(match[1], 10);
+      const total = parseInt(match[2], 10);
+      if (total > 0) {
+        investorSecuredPercent = (secured / total) * 100;
+      }
+    }
+  }
   
   return (
     <motion.div
@@ -61,7 +72,7 @@ const PropertyCard = memo(function PropertyCard({ property }: { property: Proper
               <div className="w-full bg-gray-200 rounded-full h-2.5 mt-1">
                 <div 
                   className="bg-green-600 h-2.5 rounded-full" 
-                  style={{ width: '40%' }}
+                  style={{ width: `${investorSecuredPercent}%` }}
                 ></div>
               </div>
             </div>
@@ -72,7 +83,7 @@ const PropertyCard = memo(function PropertyCard({ property }: { property: Proper
           <p className="text-gray-600">{property.address}</p>
           <div className="mt-4 flex justify-between items-center">
             <span className="text-blue-600 font-semibold">{property.formattedValue}</span>
-            <span className="text-green-600">Target Return {property.formattedAnnualReturn} p.a.</span>
+            <span className="text-green-600">Target Return: {property.formattedAnnualReturn} p.a.</span>
           </div>
         </div>
       </Link>

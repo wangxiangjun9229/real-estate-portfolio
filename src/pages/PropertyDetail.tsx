@@ -99,6 +99,19 @@ const PropertyDetail = memo(function PropertyDetail() {
     );
   }
 
+  // Calculate investor secured percent for opportunity properties
+  let investorSecuredPercent = 0;
+  if (property.type === 'opportunity' && property.opportunityDetails?.investorSecured) {
+    const match = property.opportunityDetails.investorSecured.match(/(\d+) out of (\d+)/);
+    if (match) {
+      const secured = parseInt(match[1], 10);
+      const total = parseInt(match[2], 10);
+      if (total > 0) {
+        investorSecuredPercent = (secured / total) * 100;
+      }
+    }
+  }
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <Link
@@ -195,7 +208,7 @@ const PropertyDetail = memo(function PropertyDetail() {
                     <div className="w-full bg-gray-200 rounded-full h-2.5">
                       <div 
                         className="bg-green-600 h-2.5 rounded-full" 
-                        style={{ width: '40%' }}
+                        style={{ width: `${investorSecuredPercent}%` }}
                       ></div>
                     </div>
                     <div className="flex justify-between mt-1 text-sm text-gray-600">
